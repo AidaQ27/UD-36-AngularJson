@@ -7,6 +7,7 @@ import { AcercadeComponent } from './acercade/acercade.component';
 import { MihomeComponent } from './mihome/mihome.component';
 import { PersonajesComponent } from './personajes/personajes.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DatosComponent } from './datos/datos.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     AcercadeComponent,
     MihomeComponent,
-    PersonajesComponent
+    PersonajesComponent,
+    DatosComponent
   ],
   imports: [
     BrowserModule,

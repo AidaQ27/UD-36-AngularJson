@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {ListaService} from '../lista.service';
 
 @Component({
   selector: 'app-personajes',
@@ -8,20 +9,17 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PersonajesComponent implements OnInit {
 
+  listaService: ListaService;
   personajes: any = null;
 
-  constructor(private http: HttpClient) { }
+  constructor(private listaservicio: ListaService) {
+
+    this.listaService = listaservicio;
+   }
 
   ngOnInit(): void {
-    this.http.get("https://rickandmortyapi.com/api/character/1,2,3,4,5,27,8,9,10,12,18,14,15")
-    .subscribe(
-      result => {
-        this.personajes = result;
-      },
-      error => {
-        console.log("Error Garrafal")
-      }
-    );
-  }
+    this.personajes = this.listaservicio.getPersonajes();
 
+
+}
 }
